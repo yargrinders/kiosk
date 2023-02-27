@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit List</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/edit.css">
+</head>
+<body>
+  <div class="wrapper">
+    <main>
+        <div class="container">
+            <div id="app">
+                <div class="block_edit">
+                    <input v-model="newItem.text" placeholder="text">
+                    <input v-model="newItem.value1" placeholder="value1">
+                    <input v-model="newItem.value2" placeholder="value2">
+                    <input v-model="newItem.value3" placeholder="value3">
+                    <button v-if="editIndex !== null" @click="saveEdit">Save</button>
+                    <button v-else @click="addItem">Add Item</button>
+                  </div>
+                <div class="block_edit" v-for="(item, index) in items" :key="index">
+                  <div><span>{{ item.text }}</span></div>
+                  <div><span>{{ item.value1 }}</span></div>
+                  <div><span>{{ item.value2 }}</span></div>
+                  <div><span>{{ item.value3 }}</span></div>
+                  <div>
+                    <button @click="editItem(index)">Edit</button>
+                    <button @click="removeItem(index)">Delete</button>
+                  </div>
+                </div>
+                
+                <ul>
+                  <li v-for="(item, index) in jsonData" :key="index">
+                    <span>{{ item.name }}</span> - <span>{{ item.age }}</span>
+                  </li>
+                </ul>
+                <div class="button">
+                  <button @click="save">Save</button>
+                  <input type="file" @change="onFileChange" accept=".json">
+                </div>
+                <div class="textarea" v-if="jsonLoaded">
+                  <div v-for="(value, key) in json" :key="key">
+                    <span>{{ key }}:</span> <span>{{ value }}</span>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </main>
+    <footer class="container">
+      <a href="data/data.json" download="data.json">Data.json</a>
+      <a href="data/data2.json" download="data2.json">Data2.json</a>
+      <a href="data/data3.json" download="data3.json">Data3.json</a>
+      <a href="view.html">VIEW Results</a>
+    </footer>
+  </div>
+  
+  <script src="js/edit.js"></script>
+</body>
+</html>

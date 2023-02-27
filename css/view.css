@@ -1,0 +1,83 @@
+@import url(main.css);
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.4s;
+  text-transform: uppercase;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.block > p {
+  display: flex;
+  align-items: center;
+  font-family: Arial;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.block > p span:first-child {
+  width: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.block > p span:nth-child(2) {
+  width: 25px;
+  font-weight: bold;
+}
+
+.block > p span:nth-child(3) {
+  width: 900px;
+  margin-right: 20px;
+}
+
+.block > p span:last-child {
+  width: 40px;
+}
+  
+@media (max-width: 840px) {
+  .block > p span:first-child {
+    display: none;
+  }
+  .line {
+    padding: 0px;
+  }
+  .block > p span:nth-child(2) {
+    width: 80px;
+  }
+}
