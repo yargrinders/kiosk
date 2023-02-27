@@ -5,30 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preisliste für Kiosk - Artikel</title>
-    <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/view.css">
+  </head>
+  <body>
     <div class="wrapper">
-        <header>
-            <div class="container">
-                <h1>Header</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis veritatis doloremque aut vel! Adipisci amet incidunt rem quisquam! Nostrum, sapiente!</p>
+      <header>
+        <div class="top_logo">
+          <img src="img/OKS_logo_kiosk.png" alt="OKS_logo">
+        </div>
+      </header>
+      <main>
+        <div class="container">
+          <button class="accordion">Getränke</button>
+          <div class="panel">
+            <div class="container line">
+              <div id="data-container-1" class="block"></div>
             </div>
-        </header>
-        <main>
-            <div class="container">
-                <h2>Main</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita quidem tempore velit quod. Explicabo tenetur at laborum recusandae minima inventore!</p>
+          </div>
+        </div>
+        <div class="container">
+          <button class="accordion">Speisen</button>
+          <div class="panel">
+            <div class="container line">
+              <div id="data-container-2" class="block"></div>
             </div>
-        </main>
-        <footer>
-            <div class="container">
-                <h2>Footer</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, officia accusantium? Vel laborum dolore quia doloremque alias voluptate, dolorem explicabo?</p>
+          </div>
+        </div>
+        <div class="container">
+          <button class="accordion">Snacks</button>
+          <div class="panel">
+            <div class="container line">
+              <div id="data-container-3" class="block"></div>
             </div>
-        </footer>
+          </div>
+        </div>
+      </main>
+      <footer class="container">
+        <!-- <a href="edit.html" target="_blank">EDIT</a> -->
+      </footer>
     </div>
-    <!-- MyScripts -->
-    <script src="js/script.js"></script>
+    
+    <script src="js/accordeon.js"></script>
+    <script src="js/view.js"></script>
 </body>
 </html>
